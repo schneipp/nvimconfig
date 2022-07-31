@@ -3,7 +3,7 @@ nnoremap p "*p
 vnoremap y "*y
 vnoremap p "*p
 nnoremap <F3> :NvimTreeToggle<CR>
-nnoremap <leader>bb :NvimTreeToggle<CR>
+nnoremap <leader>bb :Telescope buffers<CR>
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 let g:vimspector_base_dir='/home/rams/.local/share/nvim/plugged/vimspector'
 let g:def_mapping_enabled = 0
@@ -34,9 +34,6 @@ map <leader>K <Plug>(expand_region_expand)
 map <leader>J <Plug>(expand_region_shrink)
 
 
-" Same Clipboard for all vim instances :)
-vmap <leader>y !xsel -i -b && xsel -b <CR>
-nmap <leader>p :r !xsel -b <CR>
 
 nmap <silent>nc <C-w>c<CR>
 nnoremap <C-d> <C-d>zz
@@ -71,8 +68,8 @@ nnoremap § :lua require("harpoon.ui").nav_next()<CR>
 nnoremap <leader>k :lua require("harpoon.ui").nav_next()<CR>
 nnoremap <leader>j :lua require("harpoon.ui").nav_prev()<CR>
 " nnoremap <leader>w :mksession!<CR>
-nnoremap <leader>l :BufferPrevious<CR>
-nnoremap <leader>ö :BufferNext<CR>
+nnoremap <leader>l :BufferLineCyclePrev<CR>
+nnoremap <leader>ö :BufferLineCycleNext<CR>
 nnoremap <leader>c :BufferClose<CR>
 nnoremap <leader>qn :cnext<CR>
 nnoremap <leader>qp :cprevious<CR>
@@ -91,6 +88,8 @@ nnoremap gd    :Telescope lsp_implementations<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <leader>F    <cmd>lua vim.lsp.buf.formatting()<CR>
 "nnoremap <silent> <leader>rn    <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>o :tabprevious<CR>
+nnoremap <leader>p :tabnext<CR>
 
 nnoremap <silent> <leader>aa <cmd>lua vim.lsp.buf.code_action()<CR>
 " xmap <silent> <leader>a <cmd>lua vim.lsp.buf.range_code_action()<CR>

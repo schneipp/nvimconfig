@@ -38,7 +38,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'github/copilot.vim'
 " Tabline Plugin
-Plug 'romgrk/barbar.nvim'
+" Plug 'romgrk/barbar.nvim'
+Plug 'akinsho/bufferline.nvim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'ray-x/lsp_signature.nvim'
 " Vim Session Management

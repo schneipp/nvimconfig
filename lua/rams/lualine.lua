@@ -1,4 +1,3 @@
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -15,7 +14,7 @@ require('lualine').setup {
     lualine_c = { 'filename', "os.date('%a')", 'data', "require'lsp-status'.status()" },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_z = {'location'},
   },
   inactive_sections = {
     lualine_a = {},
