@@ -1,0 +1,71 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/.config/nvim
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+let s:shortmess_save = &shortmess
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +37 ~/work/scmiddleware/src/data/app/Http/Controllers/Api/SpecialordersController.php
+badd +5 lua/rams/bufferline.lua
+badd +4 init.vim
+badd +6 remaps.vim
+badd +38 ~/work/scmiddleware/src/data/app/Http/Controllers/SendcloudController.php
+badd +19 ~/work/scmiddleware-app/src/app/_services/packing.service.ts
+badd +55 ~/work/scmiddleware-app/src/app/pages/labels/labels.component.html
+badd +65 ~/work/scmiddleware-app/src/app/pages/labels/labels.component.ts
+badd +3 ~/work/scmiddleware-app/src/app/pages/specialorders/specialorders.component.html
+badd +311 ~/work/scmiddleware-app/src/app/pages/specialorders/specialorders.component.ts
+badd +32 ~/work/scmiddleware-app/src/app/_components/powertable/powertable.component.ts
+badd +58 plugins.vim
+badd +1 lua/rams/sessions.lua
+badd +13 lua/rams/lualine.lua
+badd +1 ~/work/scmiddleware/vimspector.Variables
+badd +1 ~/work/scmiddleware/vimspector.Watches
+badd +0 ~/work/scmiddleware/vimspector.StackTrace
+badd +1 ~/work/scmiddleware/vimspector.Console
+badd +4 lua/rams/workspaces.lua
+argglobal
+%argdel
+edit remaps.vim
+argglobal
+balt ~/work/scmiddleware-app/src/app/_components/powertable/powertable.component.ts
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 6 - ((5 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 6
+normal! 038|
+tabnext 1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20
+let &shortmess = s:shortmess_save
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

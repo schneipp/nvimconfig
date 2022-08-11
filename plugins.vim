@@ -58,4 +58,5 @@ Plug 'numToStr/Comment.nvim'
 Plug 'jamestthompson3/nvim-remote-containers'
 Plug 'natecraddock/workspaces.nvim'
 Plug 'natecraddock/sessions.nvim'
+Plug 'simrat39/rust-tools.nvim'
 call plug#end()
