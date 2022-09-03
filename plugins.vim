@@ -59,4 +59,11 @@ Plug 'jamestthompson3/nvim-remote-containers'
 Plug 'natecraddock/workspaces.nvim'
 Plug 'natecraddock/sessions.nvim'
 Plug 'simrat39/rust-tools.nvim'
+Plug 'mhartington/oceanic-next'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
+
+if (has("termguicolors"))
+ set termguicolors
+endif

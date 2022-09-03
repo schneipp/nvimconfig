@@ -1,4 +1,5 @@
-colorscheme tokyonight
+" colorscheme tokyonight
+colorscheme OceanicNext
 
 set shell=/bin/bash
 " set clipboard^=unnamed,unnamedplus
@@ -62,4 +63,11 @@ sign define LspDiagnosticsSignHint text=🟢
 
 " let bufferline.exclude_ft = ['terminal','/bin/bash']
 
-
+if exists("g:neovide")
+    let g:neovide_refresh_rate=60
+    let g:neovide_refresh_rate_idle=5
+    let g:neovide_fullscreen=1
+    let g:neovide_cursor_animation_length=0.10
+    let g:neovide_cursor_trail_length=0.8
+    let g:neovide_cursor_vfx_mode = "railgun"
+endif
