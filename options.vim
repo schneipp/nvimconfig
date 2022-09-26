@@ -67,7 +67,8 @@ if exists("g:neovide")
     let g:neovide_refresh_rate=60
     let g:neovide_refresh_rate_idle=5
     let g:neovide_fullscreen=1
-    let g:neovide_cursor_animation_length=0.10
+    let g:neovide_cursor_animation_length=0.03
     let g:neovide_cursor_trail_length=0.8
     let g:neovide_cursor_vfx_mode = "railgun"
+    set guifont=FiraCode\ NF:h14
 endif
